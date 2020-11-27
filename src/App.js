@@ -1,10 +1,16 @@
-import "./css/App.css";
-import React,{useState} from "react";
+import React from "react";
+import "./App.css";
+
 function App() {
 
   return (
-    <div className="App">
-      Hello
+    <div className="container">
+     <div className="clock-holder">
+       <div className="stopwatch">
+
+
+       </div>
+      </div>
     </div>
   );
 }
