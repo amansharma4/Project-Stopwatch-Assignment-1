@@ -68,3 +68,6 @@ body {
   border: 2px solid rgb(85, 62, 62);
   color: #fff;
 }
+#text {
+  text-align: center;
+}

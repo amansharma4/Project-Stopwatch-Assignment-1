@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Display from "./Component/Display";
+import Display from "./Component/Disp";
 import Button from "./Component/Button";
 import "./App.css";
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 
-  const start = () => {
+  const str = () => {
     run();
     setStatus(1);
     setInterv(setInterval(run, 10));
@@ -32,7 +32,12 @@ const App = () => {
       updatedMs = 0;
     }
     updatedMs++;
-    return setTime({ millisec: updatedMs, sec: updatedS, min: updatedM, hrs: updatedH });
+    return setTime({
+      millisec: updatedMs,
+      sec: updatedS,
+      min: updatedM,
+      hrs: updatedH
+    });
   };
 
   const stop = () => {
@@ -46,11 +51,12 @@ const App = () => {
     setTime({ millisec: 0, sec: 0, min: 0, hrs: 0 });
   };
 
-  const resume = () => start();
+  const resume = () => str();
 
   return (
     <div className="container">
       <div className="clock-holder">
+        <h2 id="text">Stopwatch</h2>
         <div className="stopwatch">
           <Display time={time} />
           <Button
@@ -58,7 +64,7 @@ const App = () => {
             resume={resume}
             reset={reset}
             stop={stop}
-            start={start}
+            str={str}
           />
         </div>
       </div>
